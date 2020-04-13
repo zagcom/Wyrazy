@@ -1,0 +1,24 @@
+﻿<Window x:Class="Wyrazy.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wyrazy"
+        mc:Ignorable="d"
+        Title="Wyrazy" Height="450" Width="800">
+    <Grid>
+        <ListBox x:Name="FilesList" HorizontalAlignment="Left" Height="205" Margin="58,41,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="FilesList_SelectionChanged"/>
+        <TextBox x:Name="NewListName" HorizontalAlignment="Left" Height="23" Margin="58,277,0,0" TextWrapping="Wrap" Text="Nazwa Listy" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center"/>
+        <Label Content="Dodaj nową listę" HorizontalAlignment="Left" Margin="58,251,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.548,-1.577"/>
+        <Button x:Name="CreateNewList" Content="Dodaj" HorizontalAlignment="Left" Margin="58,305,0,0" VerticalAlignment="Top" Width="120" Click="CreateNewList_Click"/>
+        <Button Content="Usuń" HorizontalAlignment="Left" Margin="58,330,0,0" VerticalAlignment="Top" Width="120" Click="Button_Click"/>
+        <ListBox x:Name="WordsList" HorizontalAlignment="Left" Height="205" Margin="225,41,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="WordsList_SelectionChanged" />
+        <Label Content="Dodaj nowy wyraz" HorizontalAlignment="Left" Margin="225,251,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.548,-1.577"/>
+        <TextBox x:Name="NewWord" HorizontalAlignment="Left" Height="23" Margin="225,277,0,0" TextWrapping="Wrap" Text="Nowy wyraz" VerticalAlignment="Top" Width="120" VerticalContentAlignment="Center"/>
+        <Button x:Name="CreateNewWord" Content="Dodaj" HorizontalAlignment="Left" Margin="225,305,0,0" VerticalAlignment="Top" Width="120" Click="CreateNewWord_Click"/>
+        <Button Content="Usuń" HorizontalAlignment="Left" Margin="225,330,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="Info" Content="Label" HorizontalAlignment="Left" Margin="410,58,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="RepetedWords" Content="Powtórzone wyrazy" HorizontalAlignment="Left" Margin="225,355,0,0" VerticalAlignment="Top"/>
+        
+    </Grid>
+</Window>
