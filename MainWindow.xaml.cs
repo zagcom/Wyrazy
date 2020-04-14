@@ -191,6 +191,7 @@ namespace Wyrazy
             {
                 SelectedWords.Items.Add(item);
             }
+            Info.Content = SelectedWords.Items.Count;
         }
 
         private void SelectAll_Click(object sender, RoutedEventArgs e)
@@ -200,6 +201,7 @@ namespace Wyrazy
             {
                 //WordsList.SelectedItems.Add(item);
                 SelectedWords.Items.Add(item);
+                counter.Text = SelectedWords.Items.Count.ToString();
             }
         }
 
@@ -209,7 +211,8 @@ namespace Wyrazy
             var item = SelectedWords.SelectedItem;
             SelectedWords.Items.Remove(item);
             //SelectedWords.Items.Refresh();
-            
+            counter.Text = SelectedWords.Items.Count.ToString();
+
         }
 
         private void SelectedWords_SelectionChanged(object sender, SelectionChangedEventArgs e)
