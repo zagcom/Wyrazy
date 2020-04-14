@@ -195,11 +195,31 @@ namespace Wyrazy
 
         private void SelectAll_Click(object sender, RoutedEventArgs e)
         {
+            WordsList.SelectionMode = SelectionMode.Extended;
             foreach (var item in WordsList.Items)
             {
-                WordsList.SelectionMode = SelectionMode.Extended;
-                WordsList.SelectedItems.Add(item);
+                //WordsList.SelectedItems.Add(item);
+                SelectedWords.Items.Add(item);
             }
+        }
+
+        private void RemoveObject_Click(object sender, RoutedEventArgs e)
+        {
+            
+            var item = SelectedWords.SelectedItem;
+            SelectedWords.Items.Remove(item);
+            //SelectedWords.Items.Refresh();
+            
+        }
+
+        private void SelectedWords_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            SelectedWords.SelectionMode = SelectionMode.Extended;
+        }
+
+        private void DeSelectAll_Click(object sender, RoutedEventArgs e)
+        {
+            SelectedWords.Items.Clear();
         }
     }
 }
