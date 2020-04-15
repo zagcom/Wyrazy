@@ -16,6 +16,7 @@ using System.IO;
 using static System.IO.Directory;
 using static System.IO.Path;
 using static System.Environment;
+using System.Text.RegularExpressions;
 
 namespace Wyrazy
 {
@@ -106,6 +107,18 @@ namespace Wyrazy
                 MessageBox.Show("Aby usunąć listę musisz ją zaznaczyć powyżej.", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
 
+        }
+
+        private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+
+        private void DoubleValidationTextBox(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("^[-,0-9]+$");
+            e.Handled = regex.IsMatch(e.Text);
         }
 
         private void FilesList_SelectionChanged(object sender, SelectionChangedEventArgs e)

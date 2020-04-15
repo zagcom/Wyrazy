@@ -26,15 +26,15 @@
         <Button x:Name="RemoveObject" Content=".." HorizontalAlignment="Left" Margin="350,102,0,0" VerticalAlignment="Top" Width="31" Click="RemoveObject_Click"/>
         <CheckBox Content="Pozwól na puste numery" HorizontalAlignment="Left" Margin="515,190,0,0" VerticalAlignment="Top"/>
         <CheckBox Content="Pozwól na powtórzenia" HorizontalAlignment="Left" Margin="515,170,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="SlideQty" HorizontalAlignment="Left" Height="23" Margin="601,108,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="66"/>
-        <TextBox x:Name="Time" HorizontalAlignment="Left" Height="23" Margin="601,142,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="66"/>
+        <TextBox x:Name="SlideQty" HorizontalAlignment="Left" PreviewTextInput="NumberValidationTextBox" Height="23" Margin="601,108,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="66"/>
+        <TextBox x:Name="Time" HorizontalAlignment="Left" PreviewTextInput="DoubleValidationTextBox" Height="23" Margin="601,142,0,0" TextWrapping="Wrap" Text="0,0" VerticalAlignment="Top" Width="66"/>
         <Label Content="Ilość wyrazów:" HorizontalAlignment="Left" Margin="511,77,0,0" VerticalAlignment="Top"/>
         <TextBlock x:Name="counter" HorizontalAlignment="Left" Margin="601,82,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
         <Label Content="Ilość wyrazów&#xD;&#xA;wylosowanych:" HorizontalAlignment="Left" Margin="511,99,0,0" VerticalAlignment="Top" Height="48" Width="90"/>
         <Label Content="Interwał:" HorizontalAlignment="Left" Margin="511,138,0,0" VerticalAlignment="Top" Height="27" Width="90"/>
-        <TextBox x:Name="Time_Copy" HorizontalAlignment="Left" Height="23" Margin="601,209,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="66"/>
+        <TextBox x:Name="Time_Copy" HorizontalAlignment="Left" PreviewTextInput="NumberValidationTextBox" Height="23" Margin="601,209,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="66"/>
         <Label Content="Numery od:" HorizontalAlignment="Left" Margin="511,205,0,0" VerticalAlignment="Top" Height="27" Width="90"/>
-        <TextBox x:Name="Time_Copy1" HorizontalAlignment="Left" Height="23" Margin="601,237,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="66"/>
+        <TextBox x:Name="Time_Copy1" HorizontalAlignment="Left" PreviewTextInput="NumberValidationTextBox" Height="23" Margin="601,237,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="66"/>
         <Label Content="Numery do:" HorizontalAlignment="Left" Margin="511,233,0,0" VerticalAlignment="Top" Height="27" Width="90"/>
 
 
