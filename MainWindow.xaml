@@ -32,10 +32,13 @@
         <TextBlock x:Name="counter" HorizontalAlignment="Left" Margin="601,82,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
         <Label Content="Ilość wyrazów&#xD;&#xA;wylosowanych:" HorizontalAlignment="Left" Margin="511,99,0,0" VerticalAlignment="Top" Height="48" Width="90"/>
         <Label Content="Interwał:" HorizontalAlignment="Left" Margin="511,138,0,0" VerticalAlignment="Top" Height="27" Width="90"/>
-        <TextBox x:Name="Time_Copy" HorizontalAlignment="Left" PreviewTextInput="NumberValidationTextBox" Height="23" Margin="601,209,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="66"/>
+        <TextBox x:Name="MinRandom" HorizontalAlignment="Left" PreviewTextInput="NumberValidationTextBox" Height="23" Margin="601,209,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="66"/>
         <Label Content="Numery od:" HorizontalAlignment="Left" Margin="511,205,0,0" VerticalAlignment="Top" Height="27" Width="90"/>
-        <TextBox x:Name="Time_Copy1" HorizontalAlignment="Left" PreviewTextInput="NumberValidationTextBox" Height="23" Margin="601,237,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="66"/>
+        <TextBox x:Name="MaxRandom" HorizontalAlignment="Left" PreviewTextInput="NumberValidationTextBox" Height="23" Margin="601,237,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="66"/>
         <Label Content="Numery do:" HorizontalAlignment="Left" Margin="511,233,0,0" VerticalAlignment="Top" Height="27" Width="90"/>
+        <Button x:Name="RandomList" Content="Losuj" HorizontalAlignment="Left" Margin="515,285,0,0" VerticalAlignment="Top" Width="75" Click="RandomList_Click"/>
+        <TextBlock x:Name="Test" HorizontalAlignment="Left" Margin="702,52,0,0" TextWrapping="Wrap" Text="aaa" VerticalAlignment="Top"/>
+        <TextBlock x:Name="Test2" HorizontalAlignment="Left" Margin="702,220,0,0" TextWrapping="Wrap" Text="aaa" VerticalAlignment="Top"/>
 
 
     </Grid>

@@ -36,23 +36,23 @@ namespace Wyrazy
         {
 
             string workingDirectory = AppDir();
-            Info.Content = workingDirectory;
+            //Info.Content = workingDirectory;
             if (!Exists(workingDirectory)) {
-                Info.Content = Info.Content + "\n" + "Directory not existing => Creating new directory";
+                //Info.Content = Info.Content + "\n" + "Directory not existing => Creating new directory";
                 CreateDirectory(workingDirectory);
             } else
             {
-                Info.Content = Info.Content + "\n" + "Directory exist";
+                //Info.Content = Info.Content + "\n" + "Directory exist";
             }
 
         }
         private void CreateNewList_Click(object sender, RoutedEventArgs e)
         {
             var fileName = Combine(AppDir(), NewListName.Text + ".txt").ToUpper();
-            Info.Content = Info.Content + "\n" + fileName;
+            //Info.Content = Info.Content + "\n" + fileName;
             if (!File.Exists(fileName))
             {
-                Info.Content = Info.Content + "\n" + "File not existing => Creating new file";
+                //Info.Content = Info.Content + "\n" + "File not existing => Creating new file";
                 StreamWriter sw = File.CreateText(fileName);
                 sw.Close();
                 FilesList.Items.Add(NewListName.Text.ToUpper());
@@ -60,7 +60,7 @@ namespace Wyrazy
             else
             {
                 MessageBox.Show("Lista już istnieje", "Uwaga", MessageBoxButton.OK,MessageBoxImage.Warning);
-                Info.Content = Info.Content + "\n" + "File exist";
+                //Info.Content = Info.Content + "\n" + "File exist";
             }
             //ListAllFiles();
 
@@ -204,7 +204,7 @@ namespace Wyrazy
             {
                 SelectedWords.Items.Add(item);
             }
-            Info.Content = SelectedWords.Items.Count;
+            //Info.Content = SelectedWords.Items.Count;
         }
 
         private void SelectAll_Click(object sender, RoutedEventArgs e)
@@ -236,6 +236,53 @@ namespace Wyrazy
         private void DeSelectAll_Click(object sender, RoutedEventArgs e)
         {
             SelectedWords.Items.Clear();
+        }
+
+        private void RandomList_Click(object sender, RoutedEventArgs e)
+        {
+            var model = new Model();
+            List<Model> modelList= new List<Model>();
+            int minran = Int32.Parse(MinRandom.Text);
+            int maxran = Int32.Parse(MaxRandom.Text);
+            
+            RandomListOfModel randomListofModel = new RandomListOfModel();
+
+            foreach (var item in SelectedWords.Items)
+            {
+                Random random = new Random();
+                
+                model.Number = RandomNumber(minran,maxran);
+                model.Word = item.ToString();
+                modelList.Add(new Model {Number = model.Number, Word = model.Word });
+                //randomListofModel.Models.Add(new Model { Number = model.Number, Word = model.Word });
+                
+            }
+
+
+            foreach (var randomModel in modelList)
+            {
+                Test.Text = Test.Text + randomModel.Number.ToString() + " " + randomModel.Word + "\n";
+            }
+
+            var wyniki = modelList.OrderBy(c => c.Number);
+            //var wyniki = randomListofModel.Models.OrderBy(c => c.Number);
+            foreach (var wynik in wyniki)
+            {
+                Test2.Text = Test2.Text + wynik.Number.ToString() + " " + wynik.Word + "\n";
+            }
+            
+        }
+
+        
+
+        private static readonly Random random = new Random();
+        private static readonly object syncLock = new object();
+        public static int RandomNumber(int min, int max)
+        {
+            lock (syncLock)
+            { // synchronize
+                return random.Next(min, max);
+            }
         }
     }
 }
