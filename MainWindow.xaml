@@ -26,8 +26,8 @@
                 <ListBox x:Name="SelectedWords" HorizontalAlignment="Left" Height="205" Margin="386,41,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="SelectedWords_SelectionChanged" />
                 <Button x:Name="MoveObject" Content=">>" HorizontalAlignment="Left" Margin="350,77,0,0" VerticalAlignment="Top" Width="31" Click="MoveObject_Click" RenderTransformOrigin="0.5,0.5"/>
                 <Button x:Name="SelectAll" Content=">>>" HorizontalAlignment="Left" Margin="350,52,0,0" VerticalAlignment="Top" Width="31" Click="SelectAll_Click"/>
-                <Button x:Name="DeSelectAll" Content="..." HorizontalAlignment="Left" Margin="350,127,0,0" VerticalAlignment="Top" Width="31" Click="DeSelectAll_Click"/>
-                <Button x:Name="RemoveObject" Content=".." HorizontalAlignment="Left" Margin="350,102,0,0" VerticalAlignment="Top" Width="31" Click="RemoveObject_Click"/>
+                <Button x:Name="DeSelectAll" Content="&lt;&lt;&lt;" HorizontalAlignment="Left" Margin="350,127,0,0" VerticalAlignment="Top" Width="31" Click="DeSelectAll_Click"/>
+                <Button x:Name="RemoveObject" Content="&lt;&lt;" HorizontalAlignment="Left" Margin="350,102,0,0" VerticalAlignment="Top" Width="31" Click="RemoveObject_Click"/>
                 <CheckBox Content="Pozwól na puste numery" HorizontalAlignment="Left" Margin="515,190,0,0" VerticalAlignment="Top"/>
                 <CheckBox Content="Pozwól na powtórzenia" HorizontalAlignment="Left" Margin="515,170,0,0" VerticalAlignment="Top"/>
                 <TextBox x:Name="SlideQty" HorizontalAlignment="Left" PreviewTextInput="NumberValidationTextBox" Height="23" Margin="601,108,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="66"/>
