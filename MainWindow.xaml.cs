@@ -204,8 +204,7 @@ namespace Wyrazy
             {
                 SelectedWords.Items.Add(item);
             }
-            counter.Text = SelectedWords.Items.Count.ToString();
-            SlideQty.Text = counter.Text;
+            PopulateNumbers();
             //Info.Content = SelectedWords.Items.Count;
         }
 
@@ -216,8 +215,7 @@ namespace Wyrazy
             {
                 //WordsList.SelectedItems.Add(item);
                 SelectedWords.Items.Add(item);
-                counter.Text = SelectedWords.Items.Count.ToString();
-                SlideQty.Text = counter.Text;
+                PopulateNumbers();
             }
         }
 
@@ -227,8 +225,7 @@ namespace Wyrazy
             var item = SelectedWords.SelectedItem;
             SelectedWords.Items.Remove(item);
             //SelectedWords.Items.Refresh();
-            counter.Text = SelectedWords.Items.Count.ToString();
-            SlideQty.Text = counter.Text;
+            PopulateNumbers();
 
         }
 
@@ -240,8 +237,7 @@ namespace Wyrazy
         private void DeSelectAll_Click(object sender, RoutedEventArgs e)
         {
             SelectedWords.Items.Clear();
-            counter.Text = SelectedWords.Items.Count.ToString();
-            SlideQty.Text = counter.Text;
+            PopulateNumbers();
         }
 
         private void RandomList_Click(object sender, RoutedEventArgs e)
@@ -263,7 +259,7 @@ namespace Wyrazy
                 model.Word = item.ToString();
                 while (result == false) { 
                 Random random = new Random();                
-                model.Number = RandomNumber(minran,maxran);
+                model.Number = RandomNumber(minran,maxran+1);
 
                     foreach (Model it in modelList)
                     {
@@ -286,8 +282,17 @@ namespace Wyrazy
 
             }
 
-            
+            int n = modelList.Count;
+            while (n > 1)
+            {
+                n--;
+                int k = rng.Next(n + 1);
+                Model value = modelList[k];
+                modelList[k] = modelList[n];
+                modelList[n] = value;
+            }
 
+            
 
             foreach (var randomModel in modelList)
             {
@@ -306,6 +311,7 @@ namespace Wyrazy
         
 
         private static readonly Random random = new Random();
+        private static Random rng = new Random();
         private static readonly object syncLock = new object();
         public static int RandomNumber(int min, int max)
         {
@@ -315,8 +321,12 @@ namespace Wyrazy
             }
         }
 
-        private static Random rng = new Random();
+        private void PopulateNumbers()
+        {
+            counter.Text = SelectedWords.Items.Count.ToString();
+            SlideQty.Text = counter.Text;
+            MaxRandom.Text = counter.Text;
+        }
 
-        
     }
 }
