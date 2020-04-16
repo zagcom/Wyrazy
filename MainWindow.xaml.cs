@@ -204,6 +204,8 @@ namespace Wyrazy
             {
                 SelectedWords.Items.Add(item);
             }
+            counter.Text = SelectedWords.Items.Count.ToString();
+            SlideQty.Text = counter.Text;
             //Info.Content = SelectedWords.Items.Count;
         }
 
@@ -215,6 +217,7 @@ namespace Wyrazy
                 //WordsList.SelectedItems.Add(item);
                 SelectedWords.Items.Add(item);
                 counter.Text = SelectedWords.Items.Count.ToString();
+                SlideQty.Text = counter.Text;
             }
         }
 
@@ -225,6 +228,7 @@ namespace Wyrazy
             SelectedWords.Items.Remove(item);
             //SelectedWords.Items.Refresh();
             counter.Text = SelectedWords.Items.Count.ToString();
+            SlideQty.Text = counter.Text;
 
         }
 
@@ -236,6 +240,8 @@ namespace Wyrazy
         private void DeSelectAll_Click(object sender, RoutedEventArgs e)
         {
             SelectedWords.Items.Clear();
+            counter.Text = SelectedWords.Items.Count.ToString();
+            SlideQty.Text = counter.Text;
         }
 
         private void RandomList_Click(object sender, RoutedEventArgs e)
@@ -244,19 +250,43 @@ namespace Wyrazy
             List<Model> modelList= new List<Model>();
             int minran = Int32.Parse(MinRandom.Text);
             int maxran = Int32.Parse(MaxRandom.Text);
+            int flag = 0;
+            bool result = false;
             
             RandomListOfModel randomListofModel = new RandomListOfModel();
 
             foreach (var item in SelectedWords.Items)
             {
-                Random random = new Random();
-                
-                model.Number = RandomNumber(minran,maxran);
+                result = false;
+                flag = 0;
+               
                 model.Word = item.ToString();
-                modelList.Add(new Model {Number = model.Number, Word = model.Word });
+                while (result == false) { 
+                Random random = new Random();                
+                model.Number = RandomNumber(minran,maxran);
+
+                    foreach (Model it in modelList)
+                    {
+                        if (model.Number == it.Number)
+                        flag++;
+                    }
+                    if (flag == 0)
+                    { 
+                            modelList.Add(new Model {Number = model.Number, Word = model.Word });
+                            result = true;
+                            
+                        
+                    } else
+                    {
+                        flag = 0;
+                    }
+
+                }
                 //randomListofModel.Models.Add(new Model { Number = model.Number, Word = model.Word });
-                
+
             }
+
+            
 
 
             foreach (var randomModel in modelList)
@@ -284,5 +314,9 @@ namespace Wyrazy
                 return random.Next(min, max);
             }
         }
+
+        private static Random rng = new Random();
+
+        
     }
 }
