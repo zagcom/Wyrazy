@@ -46,14 +46,21 @@
         </TabItem>
         <TabItem Header="Wyniki">
             <Grid Background="#FFE5E5E5">
-                <TextBlock x:Name="Test" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="aaa" VerticalAlignment="Top"/>
+                <TextBlock x:Name="Test" HorizontalAlignment="Left" Margin="225,171,0,0" TextWrapping="Wrap" Text="aaa" VerticalAlignment="Top"/>
                 <TextBlock x:Name="Test2" HorizontalAlignment="Left" Margin="225,13,0,0" TextWrapping="Wrap" Text="aaa" VerticalAlignment="Top"/>
                 <ListBox x:Name="Wyniki" Margin="400,40,20,20"/>
-                <TextBlock HorizontalAlignment="Left" Margin="10,72,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-                <TextBox HorizontalAlignment="Left" Height="23" Margin="88,69,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                <Button Content="Sprawdź" HorizontalAlignment="Left" Margin="53,97,0,0" VerticalAlignment="Top" Width="75"/>
-                <Button Content="Następny" HorizontalAlignment="Left" Margin="133,97,0,0" VerticalAlignment="Top" Width="75"/>
-                <TextBlock HorizontalAlignment="Left" Margin="10,157,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+                <TextBlock x:Name="Number" HorizontalAlignment="Left" Margin="10,300,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+                <TextBox x:Name="CheckValue" HorizontalAlignment="Left" Height="23" Margin="88,297,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                <Button x:Name="Check" Content="Sprawdź" HorizontalAlignment="Left" Margin="53,325,0,0" VerticalAlignment="Top" Width="75"/>
+                <Button x:Name="Next" Content="Następny" HorizontalAlignment="Left" Margin="133,325,0,0" VerticalAlignment="Top" Width="75"/>
+                <TextBlock x:Name="ViewResult" HorizontalAlignment="Left" Margin="10,385,0,0" TextWrapping="Wrap" Text="Czy się udało?" VerticalAlignment="Top"/>
+                <RadioButton x:Name="BtnCheckShow" GroupName="CheckingProcess" Content="W kolejności wyświetlania" HorizontalAlignment="Left" Margin="10,28,0,0" VerticalAlignment="Top"/>
+                <RadioButton x:Name="BtnCheckDefault" GroupName="CheckingProcess" Content="W dowolnej kolejności" HorizontalAlignment="Left" Margin="10,48,0,0" VerticalAlignment="Top"/>
+                <RadioButton x:Name="BtnCheckNumbersUp" GroupName="CheckingProcess" Content="W kolejności numerycznej od przodu" HorizontalAlignment="Left" Margin="10,68,0,0" VerticalAlignment="Top"/>
+                <RadioButton x:Name="BtnCheckAlphaUp" GroupName="CheckingProcess" Content="W kolejności alfabetycznej od przodu" HorizontalAlignment="Left" Margin="9,108,0,0" VerticalAlignment="Top"/>
+                <RadioButton x:Name="BtnCheckNumbersDown" GroupName="CheckingProcess" Content="W kolejności numerycznej od tyłu" HorizontalAlignment="Left" Margin="10,88,0,0" VerticalAlignment="Top"/>
+                <RadioButton x:Name="BtnCheckAlphaDown" GroupName="CheckingProcess" Content="W kolejności alfabetycznej od tyły" HorizontalAlignment="Left" Margin="10,128,0,0" VerticalAlignment="Top"/>
+                <Button x:Name="StartCheck" Content="Start" HorizontalAlignment="Left" Margin="10,156,0,0" VerticalAlignment="Top" Width="75" Click="StartCheck_Click"/>
             </Grid>
         </TabItem>
     </TabControl>

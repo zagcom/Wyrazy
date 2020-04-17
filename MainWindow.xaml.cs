@@ -328,5 +328,17 @@ namespace Wyrazy
             MaxRandom.Text = counter.Text;
         }
 
+        
+
+        private void StartCheck_Click(object sender, RoutedEventArgs e)
+        {   
+            if (BtnCheckShow.IsChecked == true) { }
+            else if (BtnCheckShow.IsChecked == true) { }
+            else if (BtnCheckShow.IsChecked == true) { }
+            else if (BtnCheckShow.IsChecked == true) { }
+            else if (BtnCheckShow.IsChecked == true) { }
+            else if (BtnCheckShow.IsChecked == true) { }
+            else MessageBox.Show("Wybierz w jakiej kolejności sprawdzamy", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Warning);
+        }
     }
 }
