@@ -44,7 +44,7 @@
 
             </Grid>
         </TabItem>
-        <TabItem Header="Wyniki">
+        <TabItem Header="Sprawdzenie">
             <Grid Background="#FFE5E5E5">
                 <TextBlock x:Name="Test" HorizontalAlignment="Left" Margin="225,171,0,0" TextWrapping="Wrap" Text="aaa" VerticalAlignment="Top"/>
                 <TextBlock x:Name="Test2" HorizontalAlignment="Left" Margin="225,13,0,0" TextWrapping="Wrap" Text="aaa" VerticalAlignment="Top"/>
@@ -61,6 +61,11 @@
                 <RadioButton x:Name="BtnCheckNumbersDown" GroupName="CheckingProcess" Content="W kolejności numerycznej od tyłu" HorizontalAlignment="Left" Margin="10,88,0,0" VerticalAlignment="Top"/>
                 <RadioButton x:Name="BtnCheckAlphaDown" GroupName="CheckingProcess" Content="W kolejności alfabetycznej od tyły" HorizontalAlignment="Left" Margin="10,128,0,0" VerticalAlignment="Top"/>
                 <Button x:Name="StartCheck" Content="Start" HorizontalAlignment="Left" Margin="10,156,0,0" VerticalAlignment="Top" Width="75" Click="StartCheck_Click"/>
+            </Grid>
+        </TabItem>
+        <TabItem Header="Wyniki">
+            <Grid Background="#FFE5E5E5">
+                <ListBox x:Name="LosowanieBaza" Margin="400,40,20,20"/>
             </Grid>
         </TabItem>
     </TabControl>
