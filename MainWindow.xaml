@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Wyrazy"
         mc:Ignorable="d"
-        Title="Wyrazy" Height="450" Width="800">
+        Title="Wyrazy" Height="500" Width="800">
 
 
     <TabControl Margin="10,10,10,10">
@@ -41,13 +41,19 @@
                 <TextBox x:Name="MaxRandom" HorizontalAlignment="Left" PreviewTextInput="NumberValidationTextBox" Height="23" Margin="601,237,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="66"/>
                 <Label Content="Numery do:" HorizontalAlignment="Left" Margin="511,233,0,0" VerticalAlignment="Top" Height="27" Width="90"/>
                 <Button x:Name="RandomList" Content="Losuj" HorizontalAlignment="Left" Margin="515,285,0,0" VerticalAlignment="Top" Width="75" Click="RandomList_Click"/>
-                
+
             </Grid>
         </TabItem>
         <TabItem Header="Wyniki">
             <Grid Background="#FFE5E5E5">
                 <TextBlock x:Name="Test" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="aaa" VerticalAlignment="Top"/>
                 <TextBlock x:Name="Test2" HorizontalAlignment="Left" Margin="225,13,0,0" TextWrapping="Wrap" Text="aaa" VerticalAlignment="Top"/>
+                <ListBox x:Name="Wyniki" Margin="400,40,20,20"/>
+                <TextBlock HorizontalAlignment="Left" Margin="10,72,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+                <TextBox HorizontalAlignment="Left" Height="23" Margin="88,69,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                <Button Content="Sprawdź" HorizontalAlignment="Left" Margin="53,97,0,0" VerticalAlignment="Top" Width="75"/>
+                <Button Content="Następny" HorizontalAlignment="Left" Margin="133,97,0,0" VerticalAlignment="Top" Width="75"/>
+                <TextBlock HorizontalAlignment="Left" Margin="10,157,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
             </Grid>
         </TabItem>
     </TabControl>
