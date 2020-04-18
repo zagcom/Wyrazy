@@ -297,6 +297,8 @@ namespace Wyrazy
             foreach (var randomModel in modelList)
             {
                 Test.Text = Test.Text + randomModel.Number.ToString() + " " + randomModel.Word + "\n";
+                LosowanieBazaList.Items.Add(new Model { Number = randomModel.Number, Word = randomModel.Word});
+                //LosowanieBaza AddRange(randomModel.Number,randomModel.Word);
             }
 
             var wyniki = modelList.OrderBy(c => c.Number);
@@ -305,6 +307,8 @@ namespace Wyrazy
             {
                 Test2.Text = Test2.Text + wynik.Number.ToString() + " " + wynik.Word + "\n";
             }
+
+            
             
         }
 
@@ -332,13 +336,33 @@ namespace Wyrazy
 
         private void StartCheck_Click(object sender, RoutedEventArgs e)
         {   
-            if (BtnCheckShow.IsChecked == true) { }
-            else if (BtnCheckShow.IsChecked == true) { }
-            else if (BtnCheckShow.IsChecked == true) { }
-            else if (BtnCheckShow.IsChecked == true) { }
-            else if (BtnCheckShow.IsChecked == true) { }
-            else if (BtnCheckShow.IsChecked == true) { }
+            if (BtnCheckShow.IsChecked == true) {
+            foreach(Model item in LosowanieBazaList.Items)
+                {
+                    ViewResult.Text = "";
+                    Number.Text = item.Number.ToString();
+                    //Check_Click(item.Word.ToString(),CheckValue.Text.ToString());
+                }
+            }
+            else if (BtnCheckRandom.IsChecked == true) { }
+            else if (BtnCheckNumbersUp.IsChecked == true) { }
+            else if (BtnCheckAlphaUp.IsChecked == true) { }
+            else if (BtnCheckNumbersDown.IsChecked == true) { }
+            else if (BtnCheckAlphaDown.IsChecked == true) { }
             else MessageBox.Show("Wybierz w jakiej kolejności sprawdzamy", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Warning);
+        }
+
+        private void Check_Click(object sender, RoutedEventArgs e, string checktext, string value)
+        {
+            CheckValues(checktext, value);
+        }
+
+        private void CheckValues(string checktext, string value)
+        {
+           if (checktext == value)
+            {
+                ViewResult.Text = "Brawo, Dobrze pamiętałeś";
+            }
         }
     }
 }
